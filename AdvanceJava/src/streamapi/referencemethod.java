@@ -1,9 +1,7 @@
 package streamapi;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
-import javax.swing.plaf.synth.SynthScrollBarUI;
+import java.util.ArrayList;
 
 interface Inter{
 	int add(int a,int b);

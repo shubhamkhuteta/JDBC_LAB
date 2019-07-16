@@ -1,7 +1,6 @@
 package lemdaexpression;
 
-import java.util.Date;
-import java.util.function.Consumer;
+
 import java.util.function.Supplier;
 
 public class ConsumerEx {

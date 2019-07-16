@@ -6,9 +6,9 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class COWArrayListEx {
 	public static void main(String[] args) {
 
-		ArrayList a1 = new ArrayList();
-		a1.add("Shubham");
-		a1.add(15313);
+		ArrayList<?> a1 = new ArrayList<Object>();
+		//a1.add("Shubham");
+		//a1.add(15313);
 		System.out.println(a1);
 		
 		CopyOnWriteArrayList<String> cowal = new CopyOnWriteArrayList<String>();
@@ -17,7 +17,7 @@ public class COWArrayListEx {
 		cowal.add("Raghav");
 		cowal.add("Pankaj");
 		cowal.add("Mr. X");
-		cowal.addAllAbsent(a1);
+		//cowal.addAllAbsent(a1);
 		System.out.println(cowal);
 	}
 }

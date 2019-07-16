@@ -12,23 +12,24 @@ import java.util.concurrent.Future;
 public class CollableEx {
 	public static void main(String[] args) throws InterruptedException, ExecutionException {
 		ExecutorService es = Executors.newFixedThreadPool(1);
-		List<Future> allfutures = new ArrayList();
+		List<Future<?>> allfutures = new ArrayList<Future<?>>();
 		
 		for(int i=0; i < 100;i++) {
-			Future future = es.submit(new TaskNew());
+			Future<?> future = es.submit(new TaskNew());
 			allfutures.add(future);
 		}
 		
 		for(int i=0; i < 100;i++) {
-			Future<Integer> future = allfutures.get(i);
-			Integer result = (Integer) future.get();
+			@SuppressWarnings("unchecked")
+			Future<Integer> future = (Future<Integer>) allfutures.get(i);
+			Integer result = future.get();
 			System.out.println(result);
 		}
 	}
 }
 
 
-class TaskNew implements Callable {
+class TaskNew implements Callable<Object> {
 	@Override
 	public Integer call() throws Exception {
 		Thread.sleep(2000);

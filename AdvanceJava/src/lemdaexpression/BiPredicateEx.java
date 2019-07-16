@@ -2,7 +2,6 @@ package lemdaexpression;
 
 import java.util.ArrayList;
 import java.util.function.BiConsumer;
-import java.util.function.BiPredicate;
 
 class Empl1{
 	int sal;

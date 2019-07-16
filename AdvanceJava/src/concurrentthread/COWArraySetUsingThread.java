@@ -2,8 +2,6 @@ package concurrentthread;
 
 import java.util.concurrent.CopyOnWriteArraySet;
 
-import javax.swing.text.html.HTMLDocument.Iterator;
-
 public class COWArraySetUsingThread extends Thread{
 
 static CopyOnWriteArraySet<String> copyArraySet = new CopyOnWriteArraySet<String>();
