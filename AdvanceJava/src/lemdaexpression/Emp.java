@@ -33,6 +33,7 @@ public class Emp{
 		
 		Predicate<EmpBean> pre = e -> e.sal>3000;
 		
+		
 		for(EmpBean emp: al) {
 			if(pre.test(emp)) {
 			System.out.println(emp);

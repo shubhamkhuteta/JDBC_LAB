@@ -1,23 +1,40 @@
 package lab2_exercise_1;
 
-abstract public class Item {
-	private int id_no, no_of_copies;
+public abstract class Item {
+	private int idNum,noOfCopies;
 	private String title;
 	
-	public int getId_no() {
-		return id_no;
+	public String toString()
+	{
+		return "Item [idNum= "+idNum+", noOfCopies= "+noOfCopies+", title= "+title+", getIdNum()= "+getIdNum()+", getNoOfCopies()= "+getNoOfCopies()+", getTitle()= "+getTitle()+", getClass()= "+getClass()+", hashCode()= "+hashCode()+", toString()= "+super.toString()+"]";
+	}
+	
+	Item()
+	{
+		
+	}
+	
+	Item(int idNum,int noOfCopies,String title)
+	{
+		this.idNum=idNum;
+		this.noOfCopies=noOfCopies;
+		this.title=title;
 	}
 
-	public void setId_no(int id_no) {
-		this.id_no = id_no;
+	public int getIdNum() {
+		return idNum;
 	}
 
-	public int getNo_of_copies() {
-		return no_of_copies;
+	public void setIdNum(int idNum) {
+		this.idNum = idNum;
 	}
 
-	public void setNo_of_copies(int no_of_copies) {
-		this.no_of_copies = no_of_copies;
+	public int getNoOfCopies() {
+		return noOfCopies;
+	}
+
+	public void setNoOfCopies(int noOfCopies) {
+		this.noOfCopies = noOfCopies;
 	}
 
 	public String getTitle() {
@@ -27,26 +44,12 @@ abstract public class Item {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	@Override
-	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
-		return super.equals(obj);
-	}
 	
-	@Override
-	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
-	}
-	
-	public Item( int id_no,int no_of_copies,String title) {
-		// TODO Auto-generated constructor stub
-		this.id_no=id_no;
-		this.no_of_copies=no_of_copies;
+	void addItem(int idNum,int noOfCopies,String title)
+	{
+		this.idNum=idNum;
+		this.noOfCopies=noOfCopies;
 		this.title=title;
 	}
-	
+
 }
-
-

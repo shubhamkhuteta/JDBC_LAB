@@ -1,28 +1,44 @@
 package lab2_exercise_1;
 
-public class CD {
+public abstract class Item 
+{
+	private int uid;
+	private String title;
+	private int copy;
+	public int getUid()
+	{
+		return uid;
+	}
+	public void setUid(int uid) 
+	{
+		this.uid = uid;
+	}
+	public String getTitle() 
+	{
+		return title;
+	}
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
+	public int getCopy() 
+	{
+		return copy;
+	}
+	public void setCopy(int copy)
+	{
+		this.copy = copy;
+	}
 	
-	private String director;
-	private String genre;
-	private String yearofrelase;
-	
-	public String getDirector() {
-		return director;
+@SuppressWarnings("unused")
+public static void main(String args[]) 
+{
+	System.out.println("This is an Abstract Class");
+	System.out.println("------------------------------------");
+	Book b=new Book();
+	CD c=new CD();
+	JournalPaper jp=new JournalPaper();
+	Video v=new Video();
+   
 	}
-	public void setDirector(String director) {
-		this.director = director;
-	}
-	public String getGenre() {
-		return genre;
-	}
-	public void setGenre(String genre) {
-		this.genre = genre;
-	}
-	public String getYearofrelase() {
-		return yearofrelase;
-	}
-	public void setYearofrelase(String yearofrelase) {
-		this.yearofrelase = yearofrelase;
-	}
-
 }

@@ -3,31 +3,32 @@ package lab1_exercise_2;
 import java.util.Scanner;
 
 public class FindDifference {
-	public static void main(String[] args) {
-		int n=0;
-	    System.out.println("Enter the value of N:");
-	    Scanner sc=new Scanner(System.in);
-	    
-	    //asking for value of n
-	    n=sc.nextInt();
-		
-	    
-	    int res = 0;
-		//printing the sum 
-	    System.out.println("\n\nDifference is : "+calculateDifference(res));
+	static int sum;
+	static int sum1=0;
+	int sqsum=0;
+	int i;
+	int calculateDifference(int n)
+	{
+	for(i=0;i<=n;i++)
+	{
+		sqsum=sqsum+(i*i);
 	}
+	for(i=0;i<=n;i++)
+	{
+		sum1=sum1+i;
+	}
+	sum1=sum1*sum1;
+	sum=sqsum-sum1;
+	return sum;
 	
-	static int calculateDifference(int n) {
-		n=0;
-		int i=0;
-		int sum=0;
-		int res=0;
-		
-		for(i=0;i<=n;i++) {
-			 
-			res=(i*i) - ((sum+=i*i));
-		}
-			 return res;
-		
-	}
+}
+public static void main(String[] args) {
+	Scanner sc= new Scanner(System.in);
+	System.out.println("Enter the value of n");
+	int n=sc.nextInt();
+	FindDifference e=new FindDifference();
+	e.calculateDifference(n);
+	System.out.println("Difference= "+sum);
+	sc.close();
+}
 }

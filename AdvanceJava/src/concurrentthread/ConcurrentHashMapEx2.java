@@ -7,6 +7,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ConcurrentHashMapEx2 extends Thread{
 	static ConcurrentHashMap<Integer, String> hm = new ConcurrentHashMap<Integer, String>();
 	
+
 	public void run() {
 		try {
 			Thread.sleep(2000);
@@ -26,6 +27,8 @@ public class ConcurrentHashMapEx2 extends Thread{
 		hm.put(4, "Sanskar");
 		
 		ConcurrentHashMapEx2 chm = new ConcurrentHashMapEx2();
+	
+		
 		chm.start();
 		
 		Set<Integer> s = hm.keySet();
