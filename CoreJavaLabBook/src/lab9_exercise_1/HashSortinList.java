@@ -2,49 +2,41 @@ package lab9_exercise_1;
 
 
 import java.util.ArrayList;
-import java.util.Collections;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.Set;
+import java.util.Scanner;
 
-public class HashSortinList 
-{
-
-	public static void main(String[] args) 
-	{
-		HashMap<Integer,Integer> hm =new HashMap<Integer, Integer>();
-		
-		hm.put(2, 14);
-		hm.put(1, 18);
-		hm.put(9, 11);
-		hm.put(4, 12);
-		hm.put(5, 10);
-		
-		ArrayList al2=new ArrayList();
-		
-		al2=(ArrayList)getSort(hm);
-		System.out.println(al2);
-	
+class Arrayss{
+	int id;
+	String name;
+	public Arrayss(int aid,String aname) {
+		// TODO Auto-generated constructor stub
+		id=aid;
+		name=aname;
 	}
-	
-	public static List getSort(HashMap<Integer, Integer> hm) 
+	public String toString()
 	{
-		ArrayList al=new ArrayList();
-		
-		Set s=hm.entrySet();
-		
-		Iterator itr =s.iterator();
-		
-		
-		while(itr.hasNext()) 
-		{
-			Entry e=(Entry)itr.next();
-			al.add(e.getKey());
-		}
-		Collections.sort(al);
-		return al;
+		return "[id=" +id+",name="+name+"]";
 	}
 }
-	
+public class HashSortinList {
+	ArrayList<Arrayss> getvalues(HashMap<Integer, Arrayss> mp)
+	{
+		Collection<Arrayss> values=mp.values();
+		ArrayList<Arrayss> lists=new ArrayList<Arrayss>(values);
+		return lists;
+	}
+	public static void main(String[] args) {
+		Scanner s=new Scanner(System.in);
+		HashSortinList e=new HashSortinList();
+		Arrayss e1=new Arrayss(12, "Kishore");
+		Arrayss e2=new Arrayss(13, "Kumaar");
+		Arrayss e3=new Arrayss(11, "Bala");
+		HashMap<Integer,Arrayss> hm=new HashMap<Integer,Arrayss>();
+		hm.put(1, e1);
+		hm.put(2, e2);
+		hm.put(3, e3);
+		System.out.println(e.getvalues(hm));
+		s.close();
+	}
+}

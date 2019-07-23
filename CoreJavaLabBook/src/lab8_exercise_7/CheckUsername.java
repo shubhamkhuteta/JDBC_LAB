@@ -4,27 +4,34 @@ import java.util.Scanner;
 
 public class CheckUsername {
 	public static void main(String[] args) {
-		String username;
-		boolean re = false,res= false;
-		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter your username : ");
-		username=sc.nextLine();
-	
-		for(int i =0; i<=username.length();i++)
+		boolean b=false;
+		Scanner sc=new Scanner (System.in);
+		System.out.println("Enter the name:");
+		String name=sc.nextLine();
+		name+="_job";
+		int i=name.indexOf("_");
+		String s=name.substring(0,i);
+		System.out.println(s);
+		b=validate(s);
+		if(b==true)
 		{
-			re=username.endsWith("_job");
-			
+			System.out.println("Valid Name..."+name);
 		}
-		if(re==true) {
-			System.out.println("Username is correct!!");
-		}else {
-			System.out.println("Please check your username!!");
+		else
+			System.out.println("Invalid Name..");
+		sc.close();
+	}
+	static boolean validate(String name)
+	{
+		boolean res=false;
+		if(name.length()<8)
+		{
+			res=false;
 		}
-		
-		if(username.length()<=13) {
-			System.out.println("Username should contain more than 8 characters");
-		}else {
-			System.out.println("You can login now!!");
+		else
+		{
+			res=true;
 		}
+		return res;
 	}
 }
